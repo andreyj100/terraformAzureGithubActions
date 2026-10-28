@@ -34,7 +34,13 @@ jobs:
         tf_actions_version: 0.14.8
         tf_actions_subcommand: 'fmt'
         tf_actions_working_dir: "./terraform"
-         
+        
+    - name: Debug files
+      run: |
+          pwd
+          ls -la
+          find . -name "*.tf"
+    
     - name: 'Terraform Init'
       uses: hashicorp/terraform-github-actions@master
       with:
